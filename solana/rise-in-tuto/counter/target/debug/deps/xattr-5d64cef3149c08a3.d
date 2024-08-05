@@ -1,0 +1,11 @@
+/run/media/panther/D/stuffs/stuffs/Projects/web3_projects/solana/rise-in-tuto/counter/target/debug/deps/libxattr-5d64cef3149c08a3.rmeta: /home/panther/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/xattr-1.3.1/src/lib.rs /home/panther/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/xattr-1.3.1/src/error.rs /home/panther/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/xattr-1.3.1/src/sys/mod.rs /home/panther/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/xattr-1.3.1/src/util.rs /home/panther/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/xattr-1.3.1/src/sys/linux_macos.rs
+
+/run/media/panther/D/stuffs/stuffs/Projects/web3_projects/solana/rise-in-tuto/counter/target/debug/deps/libxattr-5d64cef3149c08a3.rlib: /home/panther/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/xattr-1.3.1/src/lib.rs /home/panther/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/xattr-1.3.1/src/error.rs /home/panther/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/xattr-1.3.1/src/sys/mod.rs /home/panther/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/xattr-1.3.1/src/util.rs /home/panther/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/xattr-1.3.1/src/sys/linux_macos.rs
+
+/run/media/panther/D/stuffs/stuffs/Projects/web3_projects/solana/rise-in-tuto/counter/target/debug/deps/xattr-5d64cef3149c08a3.d: /home/panther/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/xattr-1.3.1/src/lib.rs /home/panther/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/xattr-1.3.1/src/error.rs /home/panther/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/xattr-1.3.1/src/sys/mod.rs /home/panther/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/xattr-1.3.1/src/util.rs /home/panther/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/xattr-1.3.1/src/sys/linux_macos.rs
+
+/home/panther/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/xattr-1.3.1/src/lib.rs:
+/home/panther/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/xattr-1.3.1/src/error.rs:
+/home/panther/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/xattr-1.3.1/src/sys/mod.rs:
+/home/panther/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/xattr-1.3.1/src/util.rs:
+/home/panther/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/xattr-1.3.1/src/sys/linux_macos.rs:

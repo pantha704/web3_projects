@@ -1,0 +1,18 @@
+[submodule "solidity_foundry/cyfrin_updraft/simple_storage/lib/forge-std"]
+	path = solidity_foundry/cyfrin_updraft/simple_storage/lib/forge-std
+	url = https://github.com/foundry-rs/forge-std
+[submodule "misc/fly.pieter.com"]
+	path = misc/fly.pieter.com
+	url = https://github.com/sanskarp10/fly.pieter.com.git
+[submodule "solana/ackee_school_of_solana/s7/task1-pantha704"]
+	path = solana/ackee_school_of_solana/s7/task1-pantha704
+	url = https://github.com/School-of-Solana/task1-pantha704.git
+[submodule "solana/ackee_school_of_solana/s7/task2-pantha704"]
+	path = solana/ackee_school_of_solana/s7/task2-pantha704
+	url = https://github.com/School-of-Solana/task2-pantha704
+[submodule "solana/freeCodeCamp/solana-curriculum"]
+	path = solana/freeCodeCamp/solana-curriculum
+	url = https://github.com/freeCodeCamp/solana-curriculum
+[submodule "thirdweb/marketplace-v3"]
+	path = thirdweb/marketplace-v3
+	url = https://github.com/thirdweb-example/marketplace-v3.git

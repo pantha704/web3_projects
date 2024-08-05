@@ -18,10 +18,5 @@ describe('votingdapp', () => {
       [{ name: 'votingdapp', programId: votingAddress }],
       []
     )
-    const provider = new BankrunProvider(context)
-
-    const votingProgram = new Program<Votingdapp>(IDL, provider)
-
-    await votingProgram.methods.initializePoll(new anchor.BN(1))
   })
 })

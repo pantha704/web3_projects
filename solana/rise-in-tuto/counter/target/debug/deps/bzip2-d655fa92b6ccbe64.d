@@ -1,0 +1,11 @@
+/run/media/panther/D/stuffs/stuffs/Projects/web3_projects/solana/rise-in-tuto/counter/target/debug/deps/libbzip2-d655fa92b6ccbe64.rmeta: /home/panther/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bzip2-0.4.4/src/lib.rs /home/panther/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bzip2-0.4.4/src/mem.rs /home/panther/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bzip2-0.4.4/src/bufread.rs /home/panther/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bzip2-0.4.4/src/read.rs /home/panther/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bzip2-0.4.4/src/write.rs
+
+/run/media/panther/D/stuffs/stuffs/Projects/web3_projects/solana/rise-in-tuto/counter/target/debug/deps/libbzip2-d655fa92b6ccbe64.rlib: /home/panther/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bzip2-0.4.4/src/lib.rs /home/panther/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bzip2-0.4.4/src/mem.rs /home/panther/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bzip2-0.4.4/src/bufread.rs /home/panther/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bzip2-0.4.4/src/read.rs /home/panther/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bzip2-0.4.4/src/write.rs
+
+/run/media/panther/D/stuffs/stuffs/Projects/web3_projects/solana/rise-in-tuto/counter/target/debug/deps/bzip2-d655fa92b6ccbe64.d: /home/panther/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bzip2-0.4.4/src/lib.rs /home/panther/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bzip2-0.4.4/src/mem.rs /home/panther/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bzip2-0.4.4/src/bufread.rs /home/panther/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bzip2-0.4.4/src/read.rs /home/panther/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bzip2-0.4.4/src/write.rs
+
+/home/panther/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bzip2-0.4.4/src/lib.rs:
+/home/panther/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bzip2-0.4.4/src/mem.rs:
+/home/panther/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bzip2-0.4.4/src/bufread.rs:
+/home/panther/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bzip2-0.4.4/src/read.rs:
+/home/panther/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bzip2-0.4.4/src/write.rs:

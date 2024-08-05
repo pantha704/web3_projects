@@ -52,6 +52,26 @@ export type Votingdapp = {
         {
           "name": "pollId",
           "type": "u64"
+        },
+        {
+          "name": "pollName",
+          "type": "string"
+        },
+        {
+          "name": "pollDescription",
+          "type": "string"
+        },
+        {
+          "name": "pollStartTime",
+          "type": "u64"
+        },
+        {
+          "name": "pollEndTime",
+          "type": "u64"
+        },
+        {
+          "name": "totalVotes",
+          "type": "u64"
         }
       ]
     }
@@ -100,10 +120,6 @@ export type Votingdapp = {
           {
             "name": "totalVotes",
             "type": "u64"
-          },
-          {
-            "name": "pollCreator",
-            "type": "pubkey"
           }
         ]
       }

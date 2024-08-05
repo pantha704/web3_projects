@@ -1,0 +1,9 @@
+/run/media/panther/D/stuffs/stuffs/Projects/web3_projects/solana/rise-in-tuto/counter/target/debug/deps/libsolana_system_program-0cebda33a925a4b0.rmeta: /home/panther/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/solana-system-program-1.18.21/src/lib.rs /home/panther/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/solana-system-program-1.18.21/src/system_instruction.rs /home/panther/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/solana-system-program-1.18.21/src/system_processor.rs
+
+/run/media/panther/D/stuffs/stuffs/Projects/web3_projects/solana/rise-in-tuto/counter/target/debug/deps/libsolana_system_program-0cebda33a925a4b0.rlib: /home/panther/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/solana-system-program-1.18.21/src/lib.rs /home/panther/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/solana-system-program-1.18.21/src/system_instruction.rs /home/panther/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/solana-system-program-1.18.21/src/system_processor.rs
+
+/run/media/panther/D/stuffs/stuffs/Projects/web3_projects/solana/rise-in-tuto/counter/target/debug/deps/solana_system_program-0cebda33a925a4b0.d: /home/panther/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/solana-system-program-1.18.21/src/lib.rs /home/panther/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/solana-system-program-1.18.21/src/system_instruction.rs /home/panther/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/solana-system-program-1.18.21/src/system_processor.rs
+
+/home/panther/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/solana-system-program-1.18.21/src/lib.rs:
+/home/panther/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/solana-system-program-1.18.21/src/system_instruction.rs:
+/home/panther/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/solana-system-program-1.18.21/src/system_processor.rs:
