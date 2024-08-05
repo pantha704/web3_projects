@@ -1,7 +1,7 @@
 // Get Balance
 import { Connection, LAMPORTS_PER_SOL, PublicKey } from "@solana/web3.js";
 
-const publicKey = new PublicKey("FsTFGXVzZ3qyUeYUMm49E6o1nLwizopqcVpoYbcWZYwM");
+const publicKey = new PublicKey("YOUR PUBLIC KEY");
 
 var connection = new Connection("https://api.devnet.solana.com", "confirmed");
 
