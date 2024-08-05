@@ -8,6 +8,7 @@ console.log(
   keypair + "\n\n"
 );
 console.log("✅ Generated Keypair!");
+
 // Loading keypair from .env
 import "dotenv/config";
 import { getKeypairFromEnvironment } from "@solana-developers/helpers";
