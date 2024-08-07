@@ -1,5 +1,6 @@
 ## Learning Solana from...
 
-#### [Solana](https://solana.com/developers/courses)
+#### [Solana (@solana/web3.js) ](https://solana.com/developers/courses)
 
-#### [Rise in](https://www.risein.com/courses/build-on-solana)
+#### [Rise in (Rust) ](https://www.risein.com/courses/build-on-solana)
+
