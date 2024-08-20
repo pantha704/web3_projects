@@ -8,7 +8,7 @@ process.argv = [process.argv[0], ...process.argv.slice(3)];
 
 		const require = __esrun_createRequire(__esrun_fileUrl);
 // check-balance.ts
-import { Connection, LAMPORTS_PER_SOL, PublicKey } from "../../node_modules/@solana/web3.js/lib/index.cjs.js";
+import { Connection, LAMPORTS_PER_SOL, PublicKey } from "@solana/web3.js/lib/index.cjs.js";
 async function getBalance(publicKeyStr) {
   try {
     const publicKey = new PublicKey(publicKeyStr);
