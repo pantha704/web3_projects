@@ -1,16 +1,18 @@
 // Get Balance
-import { Connection, LAMPORTS_PER_SOL, PublicKey } from "@solana/web3.js";
+import {
+  Connection,
+  LAMPORTS_PER_SOL,
+  PublicKey,
+  clusterApiUrl,
+} from "@solana/web3.js";
 
 async function getBalance(publicKeyStr: string) {
   try {
     // Create a PublicKey object from the wallet address
     const publicKey = new PublicKey(publicKeyStr);
 
-    // Connect to Solana mainnet
-    const connection = new Connection(
-      "https://api.mainnet-beta.solana.com",
-      "confirmed"
-    );
+    // Connect to Solana devnet
+    const connection = new Connection(clusterApiUrl("devnet"), "confirmed");
 
     // Get the balance in lamports (the smallest unit of SOL)
     const balanceInLamps = await connection.getBalance(publicKey);
