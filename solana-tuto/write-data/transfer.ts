@@ -5,11 +5,15 @@ import {
   sendAndConfirmTransaction,
   Keypair,
   PublicKey,
+  LAMPORTS_PER_SOL,
 } from "@solana/web3.js";
 import {
   getKeypairFromEnvironment,
   addKeypairToEnvFile,
+  confirmTransaction,
+  airdropIfRequired,
 } from "@solana-developers/helpers";
+import * as dotenv from "dotenv";
 
 const suppliedToPubkey =
   process.argv[2] || "HyYY4pMjsoXABSei7qmFHTenXVVBfGgt1n9EmY3iirKV";
@@ -18,26 +22,31 @@ if (!suppliedToPubkey) {
   console.log(`Please provide a public key to send to`);
   process.exit(1);
 }
-
+// Generating a new keypair
 const keypair = Keypair.generate();
-// console.log(keypair.secretKey);
 
 try {
-  await addKeypairToEnvFile(keypair, "SECRET_KEY", ".env");
+  // await addKeypairToEnvFile(keypair, "SECRET_KEY", ".env");
 } catch (error) {
   console.log();
 }
-const senderKeypair = getKeypairFromEnvironment("SECRET_KEY");
-console.log(senderKeypair.publicKey.toBase58());
 
-console.log(`suppliedToPubkey: ${suppliedToPubkey}`);
+dotenv.config();
+const senderKeypair = keypair; // getKeypairFromEnvironment("SECRET_KEY");
+console.log("Sending from: " + senderKeypair.publicKey.toBase58());
+
+console.log(`Sending to: ${suppliedToPubkey}`);
 
 const toPubkey = new PublicKey(suppliedToPubkey);
 
-const connection = new Connection(
-  "https://api.testnet.solana.com",
-  "confirmed"
+const connection = new Connection("https://api.devnet.solana.com", "confirmed");
+
+// Requesting Airdrop for gas fees
+const drop = await connection.requestAirdrop(
+  senderKeypair.publicKey,
+  1 * LAMPORTS_PER_SOL
 );
+await confirmTransaction(connection, drop);
 
 console.log(
   `✅ Loaded our own keypair, the destination public key, and connected to Solana`
