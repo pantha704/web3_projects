@@ -1,2 +1,6 @@
 **/node_modules
 .env
+solana/*/target/
+solana/*/test-ledger/
+**/target/
+**/test-ledger/
