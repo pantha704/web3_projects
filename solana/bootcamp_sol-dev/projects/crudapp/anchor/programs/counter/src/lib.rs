@@ -63,7 +63,7 @@ pub struct UpdateEntry<'info> {
         bump,
         realloc = 8 + JournalEntryState::INIT_SPACE,  // to increase the account rent if the account size(bytes) gets larger and vice versa
         realloc::payer = owner,   // owner receives/pays the extra rent
-        realloc::zero = true,     // re-calculates the size of account, clears old data
+        realloc::zero = true,     // re-calculates the size of account from 0, clears old data
     )]
     pub journal_entry: Account<'info, JournalEntryState>,
 
@@ -90,7 +90,7 @@ pub struct DeleteEntry<'info> {
     pub system_program: Program<'info, System>,
 }
 
-// Journal Entry Account/PDA structure (stored in an immutable account)
+// Journal Entry Account/PDA structure
 #[account]
 #[derive(InitSpace)]
 pub struct JournalEntryState {
