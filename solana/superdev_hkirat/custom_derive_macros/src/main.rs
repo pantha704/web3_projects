@@ -5,9 +5,12 @@ trait Serialize {
 }
 
 trait Deserialize {
-    fn deserialize(v: Vec<u8>) -> Swap;
+    fn deserialize(v: Vec<u8>) -> Result<Self, Error>
+    where
+        Self: Sized;
 }
 
+#[derive(Debug)]
 struct Swap {
     qty_1: u32,
     qty_2: u32,
@@ -23,16 +26,14 @@ impl Serialize for Swap {
 }
 
 impl Deserialize for Swap {
-    fn deserialize(v: Vec<u8>) -> Result<Swap, Error> {
+    fn deserialize(v: Vec<u8>) -> Result<Self, Error> {
         if v.len() != 8 {
             return Err(Error);
         }
-        if v[0..4].iter().any(|&x| x == 0) || v[4..8].iter().any(|&x| x == 0) {
-            return Err(Error);
-        }
-        let qty_1 = u32::from_le_bytes(v[0..4].try_into().unwrap());
-        let qty_2 = u32::from_le_bytes(v[4..8].try_into().unwrap());
-        Swap { qty_1, qty_2 }
+
+        let qty_1 = u32::from_le_bytes(v[0..4].try_into().map_err(|_| Error)?);
+        let qty_2 = u32::from_le_bytes(v[4..8].try_into().map_err(|_| Error)?);
+        Ok(Swap { qty_1, qty_2 })
     }
 }
 
@@ -44,7 +45,16 @@ fn main() -> Result<(), Error> {
     let serialized_data = swap.serialize();
 
     // Print the serialized data for demonstration
-    println!("{:?}", serialized_data);
+    println!("Serialized Swap: {:?}", serialized_data);
+
+    match Swap::deserialize(serialized_data) {
+        Ok(deserialized_swap) => {
+            println!("Deserialized Swap: {:?}", deserialized_swap);
+        }
+        Err(e) => {
+            eprintln!("Error during deserialization: {:?}", e);
+        }
+    }
 
     Ok(())
 }

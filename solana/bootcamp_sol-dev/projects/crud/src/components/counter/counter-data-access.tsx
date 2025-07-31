@@ -9,7 +9,6 @@ import { useCluster } from '../cluster/cluster-data-access'
 import { useAnchorProvider } from '../solana/solana-provider'
 import { useTransactionToast } from '../use-transaction-toast'
 import { toast } from 'sonner'
-import { useQueryClient } from '@tanstack/react-query'
 
 interface CreateEntryArgs {
   title: string
@@ -18,7 +17,6 @@ interface CreateEntryArgs {
 }
 
 export function useCounterProgram() {
-  const queryClient = useQueryClient()
   const { connection } = useConnection()
   const { cluster } = useCluster()
   const transactionToast = useTransactionToast()
@@ -38,17 +36,15 @@ export function useCounterProgram() {
 
   const createEntry = useMutation<string, Error, CreateEntryArgs>({
     mutationKey: ['journalEntry', 'create', { cluster }],
-    mutationFn: async ({ title, message, owner }) => {
+    mutationFn: ({ title, message, owner }) => {
       return program.methods.createJournalEntry(title, message).rpc()
     },
-    onSuccess: (signature) => {
+    onSuccess: async (signature) => {
       transactionToast(signature)
-      queryClient.invalidateQueries({
-        queryKey: ['counter', 'all'],
-      })
+      await accounts.refetch()
     },
     onError: (error) => {
-      toast.error('Error creating entry: ' + error.message)
+      toast.error(error.message)
     },
   })
 
@@ -62,7 +58,6 @@ export function useCounterProgram() {
 }
 
 export function useCounterProgramAccount({ account }: { account: PublicKey }) {
-  const queryClient = useQueryClient()
   const { cluster } = useCluster()
   const transactionToast = useTransactionToast()
   const { program, accounts } = useCounterProgram()
@@ -74,36 +69,29 @@ export function useCounterProgramAccount({ account }: { account: PublicKey }) {
 
   const updateEntry = useMutation<string, Error, CreateEntryArgs>({
     mutationKey: ['journalEntry', 'update', { cluster }],
-    mutationFn: async ({ title, message, owner }) => {
+    mutationFn: ({ title, message, owner }) => {
       return program.methods.updateJournalEntry(title, message).rpc()
     },
-    onSuccess: (signature) => {
+    onSuccess: async (signature) => {
       transactionToast(signature)
-      queryClient.invalidateQueries({
-        queryKey: ['counter', 'all'],
-      })
-      queryClient.invalidateQueries({
-        queryKey: ['counter', 'fetch'],
-      })
+      await accounts.refetch()
     },
     onError: (error) => {
-      toast.error('Error updating entry: ' + error.message)
+      toast.error(error.message)
     },
   })
 
   const deleteEntry = useMutation({
     mutationKey: ['journalEntry', 'delete', { cluster }],
-    mutationFn: async (title: string) => {
+    mutationFn: (title: string) => {
       return program.methods.deleteJournalEntry(title).rpc()
     },
-    onSuccess: (signature) => {
+    onSuccess: async (signature) => {
       transactionToast(signature)
-      queryClient.invalidateQueries({
-        queryKey: ['counter', 'all'],
-      })
+      await accounts.refetch()
     },
     onError: (error) => {
-      toast.error('Error updating entry: ' + error.message)
+      toast.error(error.message)
     },
   })
 

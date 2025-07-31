@@ -2,10 +2,10 @@
 
 use anchor_lang::prelude::*;
 
-declare_id!("EweTZCiTVAURjHF8BHEo7C9kq3C614Ec1G4zgu2WSMzi");
+declare_id!("34FqEwJnjApLUSpHjCU46nTY2ApXhuqFCHFn792mr9si");
 
 #[program]
-pub mod crudapp {
+pub mod counter {
     use super::*;
 
     pub fn create_journal_entry(
@@ -13,7 +13,7 @@ pub mod crudapp {
         title: String,
         message: String,
     ) -> Result<()> {
-        let entry = &mut ctx.accounts.journal_entry; // journal_entry account from CreateEntry struct
+        let entry = &mut ctx.accounts.journal_entry;
         entry.owner = *ctx.accounts.owner.key;
         entry.title = title;
         entry.message = message;
@@ -25,8 +25,8 @@ pub mod crudapp {
         title: String,
         message: String,
     ) -> Result<()> {
-        let journal_entry = &mut ctx.accounts.journal_entry;
-        journal_entry.message = message;
+        let entry = &mut ctx.accounts.journal_entry;
+        entry.message = message;
         Ok(())
     }
 
@@ -36,19 +36,18 @@ pub mod crudapp {
 }
 
 #[derive(Accounts)]
-#[instruction(title: String)] // to get the title parameter from the create_journal_entry instruction
+#[instruction(title: String)]
 pub struct CreateEntry<'info> {
-    // Initialize the journal entry account/PDA using [title, owner]
     #[account(
         init,
-        seeds = [title.as_bytes(), owner.key().as_ref()],
+        seeds=[title.as_bytes(), owner.key().as_ref()],
         bump,
         payer = owner,
         space = 8 + JournalEntryState::INIT_SPACE,
     )]
     pub journal_entry: Account<'info, JournalEntryState>,
 
-    #[account(mut)] // owner account is mut because of changing its balance
+    #[account(mut)]
     pub owner: Signer<'info>,
 
     pub system_program: Program<'info, System>,
@@ -59,15 +58,15 @@ pub struct CreateEntry<'info> {
 pub struct UpdateEntry<'info> {
     #[account(
         mut,
-        seeds = [title.as_bytes(), owner.key().as_ref()],
+        seeds=[title.as_bytes(), owner.key().as_ref()],
         bump,
-        realloc = 8 + JournalEntryState::INIT_SPACE,  // to increase the account rent if the account size(bytes) gets larger and vice versa
-        realloc::payer = owner,   // owner receives/pays the extra rent
-        realloc::zero = true,     // re-calculates the size of account from 0, clears old data
+        realloc= 8 + JournalEntryState::INIT_SPACE,
+        realloc::payer = owner,
+        realloc::zero = true,
     )]
     pub journal_entry: Account<'info, JournalEntryState>,
 
-    #[account(mut)] // owner account is mut because of changing its balance
+    #[account(mut)]
     pub owner: Signer<'info>,
 
     pub system_program: Program<'info, System>,
@@ -78,19 +77,18 @@ pub struct UpdateEntry<'info> {
 pub struct DeleteEntry<'info> {
     #[account(
         mut,
-        seeds = [title.as_bytes(), owner.key().as_ref()],
+        seeds=[title.as_bytes(), owner.key().as_ref()],
         bump,
-        close = owner,    // if signer === owner, delete the account
+        close = owner,
     )]
     pub journal_entry: Account<'info, JournalEntryState>,
 
-    #[account(mut)] // owner account is mut because of changing its balance
+    #[account(mut)]
     pub owner: Signer<'info>,
 
     pub system_program: Program<'info, System>,
 }
 
-// Journal Entry Account/PDA structure
 #[account]
 #[derive(InitSpace)]
 pub struct JournalEntryState {
