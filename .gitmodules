@@ -16,3 +16,6 @@
 [submodule "thirdweb/marketplace-v3"]
 	path = thirdweb/marketplace-v3
 	url = https://github.com/thirdweb-example/marketplace-v3.git
+[submodule "solana/bootcamp_sol-dev/projects/solana/ackee_school_of_solana/s7/program-pantha704"]
+	path = solana/bootcamp_sol-dev/projects/solana/ackee_school_of_solana/s7/program-pantha704
+	url = https://github.com/School-of-Solana/program-pantha704
